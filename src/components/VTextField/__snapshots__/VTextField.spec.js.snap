@@ -11,7 +11,6 @@ exports[`VTextField.js should calculate element height when using auto-grow prop
     </textarea>
   </div>
   <div class="input-group__details">
-    <!---->
   </div>
 </div>
 
@@ -72,7 +71,6 @@ exports[`VTextField.js should not display counter when set to false 1`] = `
     >
   </div>
   <div class="input-group__details">
-    <!---->
     <div class="input-group__counter">
       0 / 25
     </div>
@@ -90,7 +88,6 @@ exports[`VTextField.js should not display counter when set to false 2`] = `
     >
   </div>
   <div class="input-group__details">
-    <!---->
   </div>
 </div>
 
@@ -105,7 +102,6 @@ exports[`VTextField.js should render component and match snapshot 1`] = `
     >
   </div>
   <div class="input-group__details">
-    <!---->
   </div>
 </div>
 
@@ -134,10 +130,8 @@ exports[`VTextField.js should render component with async loading and custom pro
           <div class="progress-linear__bar__indeterminate short orange">
           </div>
         </div>
-        <!---->
       </div>
     </div>
-    <!---->
   </div>
 </div>
 
@@ -166,10 +160,8 @@ exports[`VTextField.js should render component with async loading and match snap
           <div class="progress-linear__bar__indeterminate short primary">
           </div>
         </div>
-        <!---->
       </div>
     </div>
-    <!---->
   </div>
 </div>
 
