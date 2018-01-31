@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://travis-ci.org/vuetifyjs/vuetify">
-    <img src="https://img.shields.io/travis/vuetifyjs/vuetify.svg" alt="travis ci badge">
+    <img src="https://img.shields.io/travis/transgineers/vuetify.svg" alt="travis ci badge">
   </a>
   <a href="https://codecov.io/gh/vuetifyjs/vuetify">
     <img src="https://img.shields.io/codecov/c/github/vuetifyjs/vuetify.svg" alt="Coverage">
@@ -79,7 +79,7 @@
 <p>Build <i>amazing</i> applications with the power of Vue and Material Design and a massive library of beautifully crafted components. Created according to Google's <strong><a href="https://material.io/" target="_blank">Material Design Spec</a></strong>, Vuetify components feature an easy-to-remember semantic design that shifts remembering complex classes and markup, to type-as-you speak properties that have simple and clear names.</p>
 
 <p>Harness the power of the <a href="https://chat.vuetifyjs.com">Vuetify community</a> and get help 24/7 from talented developers across the world, the dev team and the creator, John Leider. Become a <a href="https://www.patreon.com/vuetify">backer</a> and get access to dedicated support from the team.</p>
-  
+
 <p>Vuetify supports all <strong>modern browsers</strong>, including IE11 and Safari 9+. From mobile to laptop to desktop, you can rest assured that your application will work as expected. Interested in the bleeding edge? Try the vue-cli Webpack SSR (Server side rendered) template and build websites optimized for SEO.</p>
 
 <h2>Demo and Documentation</h2>
