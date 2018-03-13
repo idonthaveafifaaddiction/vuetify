@@ -18,23 +18,37 @@ function getDocumentHeight () {
   )
 }
 
-function getTargetLocation (target, settings) {
-  const documentHeight = getDocumentHeight()
-  const windowHeight = window.innerHeight || (document.documentElement || document.body).clientHeight
+function getWindowHeight () {
+  return window.innerHeight ||
+    (document.documentElement || document.body).clientHeight
+}
 
+function isVueComponent (obj) {
+  return obj &&
+    obj.constructor &&
+    obj.constructor.name === 'VueComponent'
+}
+
+function getTargetLocation (target, settings) {
   let location
 
-  if (target instanceof Element) location = target.offsetTop
-  else if (typeof target === 'string') location = document.querySelector(target).offsetTop
-  else if (typeof target === 'number') location = target
-  else location = undefined
-
-  location += settings.offset
+  if (target instanceof Element) {
+    location = target.offsetTop
+  } else if (isVueComponent(target)) {
+    location = target.$el.offsetTop
+  } else if (typeof target === 'string') {
+    location = document.querySelector(target).offsetTop
+  } else if (typeof target === 'number') {
+    location = target
+  } else {
+    return undefined
+  }
 
   return Math.round(
-    documentHeight - location < windowHeight
-      ? documentHeight - windowHeight
-      : location
+    Math.min(
+      Math.max(location + settings.offset, 0),
+      getDocumentHeight() - getWindowHeight()
+    )
   )
 }
 
@@ -49,7 +63,10 @@ export default function goTo (target, options) {
   const distanceToScroll = targetLocation - startLocation
   const easingFunction = typeof settings.easing === 'function' ? settings.easing : easingPatterns[settings.easing]
 
-  if (isNaN(targetLocation)) return consoleError(`Target must be a Selector/Number/DOMElement, received ${target.constructor.name} instead.`)
+  if (isNaN(targetLocation)) {
+    const type = target && target.constructor ? target.constructor.name : target
+    return consoleError(`Target must be a Selector/Number/DOMElement/VueComponent, received ${type} instead.`)
+  }
   if (!easingFunction) return consoleError(`Easing function '${settings.easing}' not found.`)
 
   function step (currentTime) {
